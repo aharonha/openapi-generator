@@ -108,7 +108,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
@@ -189,7 +188,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
@@ -270,7 +268,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
@@ -351,7 +348,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
@@ -426,12 +422,10 @@ public class UserApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("getUserByName", localVarResponse);
         }
-        InputStream responseBody = localVarResponse.body();
         return new ApiResponse<User>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          responseBody == null || responseBody.available() < 1 ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<User>() {}) // closes the InputStream
-          
+          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<User>() {}) // closes the InputStream
         );
       } finally {
       }
@@ -502,12 +496,10 @@ public class UserApi {
         if (localVarResponse.statusCode()/ 100 != 2) {
           throw getApiException("loginUser", localVarResponse);
         }
-        InputStream responseBody = localVarResponse.body();
         return new ApiResponse<String>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          responseBody == null || responseBody.available() < 1 ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<String>() {}) // closes the InputStream
-          
+          localVarResponse.body() == null ? null : memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<String>() {}) // closes the InputStream
         );
       } finally {
       }
@@ -588,7 +580,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
@@ -661,7 +652,6 @@ public class UserApi {
         return new ApiResponse<Void>(
           localVarResponse.statusCode(),
           localVarResponse.headers().map(),
-          
           null
         );
       } finally {
